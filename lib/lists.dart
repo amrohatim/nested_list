@@ -5,14 +5,15 @@ class Lists {
         "vendor": "Costruction Wizrds",
         "img": "assets/images/v1.jpg",
         "array1": {
-          "name": "Array1Name",
-          "array2": {
-            "name": "Array2Name",
-            "array3": {
-              "name": "Array3Name",
-              "array4": {"name": "Array4Name"},
-            },
-          },
+          "items": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+          ],
         },
       },
       {
@@ -20,14 +21,15 @@ class Lists {
         "img": "assets/images/v2.jpg",
 
         "array1": {
-          "name": "Array1Name",
-          "array2": {
-            "name": "Array2Name",
-            "array3": {
-              "name": "Array3Name",
-              "array4": {"name": "Array9Name"},
-            },
-          },
+          "items": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+          ],
         },
       },
       {
@@ -35,14 +37,15 @@ class Lists {
         "img": "assets/images/v3.jpg",
 
         "array1": {
-          "name": "Array1Name",
-          "array2": {
-            "name": "Array2Name",
-            "array3": {
-              "name": "Array3Name",
-              "array4": {"name": "Array4Name"},
-            },
-          },
+          "items": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+          ],
         },
       },
       {
@@ -50,14 +53,15 @@ class Lists {
         "img": "assets/images/v4.jpg",
 
         "array1": {
-          "name": "Array1Name",
-          "array2": {
-            "name": "Array2Name",
-            "array3": {
-              "name": "Array3Name",
-              "array4": {"name": "Array4Name"},
-            },
-          },
+          "items": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+          ],
         },
       },
     ],
@@ -70,14 +74,16 @@ class Lists {
         "subtitle": "fresh and healthy",
         "img": "assets/images/i3.jpg",
         "array1": {
-          "name": "item1",
-          "array2": {
-            "name": "item2",
-            "array3": {
-              "name": "item3",
-              "array4": {"name": "item4"},
-            },
-          },
+          "itemss": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+            'frutEnd',
+          ],
         },
       },
       {
@@ -86,14 +92,15 @@ class Lists {
 
         "img": "assets/images/i1.jpg",
         "array1": {
-          "name": "item1",
-          "array2": {
-            "name": "item2",
-            "array3": {
-              "name": "item3",
-              "array4": {"name": "item4"},
-            },
-          },
+          "itemss": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+          ],
         },
       },
       {
@@ -102,14 +109,15 @@ class Lists {
 
         "img": "assets/images/i2.jpg",
         "array1": {
-          "name": "item1",
-          "array2": {
-            "name": "item2",
-            "array3": {
-              "name": "item3",
-              "array4": {"name": "item4"},
-            },
-          },
+          "itemss": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+          ],
         },
       },
       {
@@ -118,14 +126,15 @@ class Lists {
 
         "img": "assets/images/i4.jpg",
         "array1": {
-          "name": "item1",
-          "array2": {
-            "name": "item2",
-            "array3": {
-              "name": "item3",
-              "array4": {"name": "item4"},
-            },
-          },
+          "itemss": [
+            "item1",
+            "item2",
+            "item3",
+            "item4",
+            "item5",
+            "item6",
+            "item7",
+          ],
         },
       },
     ],

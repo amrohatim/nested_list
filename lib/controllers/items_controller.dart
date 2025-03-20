@@ -6,9 +6,9 @@ class ItemsController extends GetxController {
   List<Item> getitems() {
     List<Item> items = [];
     for (var item in Lists.items['items']) {
-      items.add(Item.fromJson(item));
+      items!.add(Item.fromJson(item));
     }
-    print(items[0].array1.array2.array3.name);
-    return items;
+
+    return items!;
   }
 }

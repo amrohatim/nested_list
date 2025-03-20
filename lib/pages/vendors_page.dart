@@ -332,93 +332,8 @@ class _VendorsPageState extends State<VendorsPage> {
                                   color: Colors.transparent,
                                 ),
                               ),
-                              title: Text(vendors[index].array1.name),
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6).w,
-                                    color: const Color.fromARGB(
-                                      116,
-                                      255,
-                                      255,
-                                      255,
-                                    ),
-                                  ),
-                                  child: ExpansionTile(
-                                    childrenPadding: EdgeInsets.only(
-                                      left: 10.w,
-                                    ),
-                                    shape: BeveledRectangleBorder(
-                                      side: BorderSide(
-                                        width: 0,
-                                        color: Colors.transparent,
-                                      ),
-                                    ),
-                                    title: Text(
-                                      vendors[index].array1.array2.name,
-                                    ),
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(6).w,
-                                          color: const Color.fromARGB(
-                                            135,
-                                            255,
-                                            255,
-                                            255,
-                                          ),
-                                        ),
-                                        child: ExpansionTile(
-                                          childrenPadding: EdgeInsets.only(
-                                            left: 10.w,
-                                          ),
-                                          shape: BeveledRectangleBorder(
-                                            side: BorderSide.none,
-                                          ),
-                                          title: Text(
-                                            vendors[index]
-                                                .array1
-                                                .array2
-                                                .array3
-                                                .name,
-                                          ),
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(6).w,
-                                                color: const Color.fromARGB(
-                                                  255,
-                                                  255,
-                                                  255,
-                                                  255,
-                                                ),
-                                              ),
-                                              child: ExpansionTile(
-                                                shape: BeveledRectangleBorder(
-                                                  side: BorderSide(
-                                                    width: 0,
-                                                    color: Colors.transparent,
-                                                  ),
-                                                ),
-                                                title: Text(
-                                                  vendors[index]
-                                                      .array1
-                                                      .array2
-                                                      .array3
-                                                      .array4
-                                                      .name,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                              title: Text(vendors[index].array1.items[index]),
+                              children: nested(vendors[index].array1.items, 1),
                             ),
                           ),
                         ],
@@ -432,5 +347,18 @@ class _VendorsPageState extends State<VendorsPage> {
         );
       },
     );
+  }
+
+  List<Widget> nested(List<String> items, int index) {
+    if (index >= items.length) return [];
+    return [
+      ExpansionTile(
+        shape: BeveledRectangleBorder(
+          side: BorderSide(width: 0, color: Colors.transparent),
+        ),
+        title: Text(items[index]),
+        children: nested(items, index + 1),
+      ),
+    ];
   }
 }

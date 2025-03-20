@@ -15,10 +15,10 @@ class ItemsPage extends StatefulWidget {
 class _ItemsPageState extends State<ItemsPage> {
   String page = "All";
   late Color _expanisonColor;
+
   @override
   void initState() {
     _expanisonColor = const Color.fromARGB(126, 243, 241, 241);
-
     super.initState();
   }
 
@@ -67,7 +67,6 @@ class _ItemsPageState extends State<ItemsPage> {
                           ),
                         ),
                       ),
-
                       if (page == "All")
                         Positioned(
                           bottom: 0,
@@ -85,7 +84,6 @@ class _ItemsPageState extends State<ItemsPage> {
                   ),
                 ),
                 SizedBox(width: 10.w),
-
                 InkWell(
                   onTap: () {
                     setState(() {
@@ -117,7 +115,6 @@ class _ItemsPageState extends State<ItemsPage> {
                           ),
                         ),
                       ),
-
                       if (page == "P")
                         Positioned(
                           bottom: 0,
@@ -135,7 +132,6 @@ class _ItemsPageState extends State<ItemsPage> {
                   ),
                 ),
                 SizedBox(width: 5.w),
-
                 InkWell(
                   onTap: () {
                     setState(() {
@@ -265,93 +261,8 @@ class _ItemsPageState extends State<ItemsPage> {
                                   color: Colors.transparent,
                                 ),
                               ),
-                              title: Text(items[index].array1.name),
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6).w,
-                                    color: const Color.fromARGB(
-                                      116,
-                                      255,
-                                      255,
-                                      255,
-                                    ),
-                                  ),
-                                  child: ExpansionTile(
-                                    childrenPadding: EdgeInsets.only(
-                                      left: 10.w,
-                                    ),
-                                    shape: BeveledRectangleBorder(
-                                      side: BorderSide(
-                                        width: 0,
-                                        color: Colors.transparent,
-                                      ),
-                                    ),
-                                    title: Text(
-                                      items[index].array1.array2.name,
-                                    ),
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(6).w,
-                                          color: const Color.fromARGB(
-                                            135,
-                                            255,
-                                            255,
-                                            255,
-                                          ),
-                                        ),
-                                        child: ExpansionTile(
-                                          childrenPadding: EdgeInsets.only(
-                                            left: 10.w,
-                                          ),
-                                          shape: BeveledRectangleBorder(
-                                            side: BorderSide.none,
-                                          ),
-                                          title: Text(
-                                            items[index]
-                                                .array1
-                                                .array2
-                                                .array3
-                                                .name,
-                                          ),
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(6).w,
-                                                color: const Color.fromARGB(
-                                                  255,
-                                                  255,
-                                                  255,
-                                                  255,
-                                                ),
-                                              ),
-                                              child: ExpansionTile(
-                                                shape: BeveledRectangleBorder(
-                                                  side: BorderSide(
-                                                    width: 0,
-                                                    color: Colors.transparent,
-                                                  ),
-                                                ),
-                                                title: Text(
-                                                  items[index]
-                                                      .array1
-                                                      .array2
-                                                      .array3
-                                                      .array4
-                                                      .name,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                              title: Text(items[index].array1.items[0]),
+                              children: nested(items[index].array1.items, 1),
                             ),
                           ),
                         ],
@@ -365,5 +276,18 @@ class _ItemsPageState extends State<ItemsPage> {
         );
       },
     );
+  }
+
+  List<Widget> nested(List<String> items, int index) {
+    if (index >= items.length) return [];
+    return [
+      ExpansionTile(
+        shape: BeveledRectangleBorder(
+          side: BorderSide(width: 0, color: Colors.transparent),
+        ),
+        title: Text(items[index]),
+        children: nested(items, index + 1),
+      ),
+    ];
   }
 }
